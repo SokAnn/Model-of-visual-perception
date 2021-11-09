@@ -1,7 +1,8 @@
 import ganglionic as g
 
+
 # вертикальная простая клетка
-class VerticalSimpleCell():
+class VerticalSimpleCell:
     # инициализация простой вертикальной клетки
     def __init__(self, position, size=3):
         self.ganglionic_cells = []
@@ -13,18 +14,17 @@ class VerticalSimpleCell():
                 if i == 0:
                     isoff = False
                 self.ganglionic_cells.append(g.GanglionicCell((position[0] + i * d, position[1] + j * d), isoff=isoff))
-                #print('\t\t\t', position[0] + i * d, '\t', position[1] + j * d, '\t simple')
 
     # получение отклика
     def get_response(self, image):
         response = 0
         for cell in self.ganglionic_cells:
             response += cell.get_response(image)
-        #print('ganglionic responses (simple cell) ', response)
         return response
 
+
 # горизонтальная простая клетка
-class HorizontalSimpleCell():
+class HorizontalSimpleCell:
     # инициализация простой горизонтальной клетки
     def __init__(self, position, size=7):
         self.ganglionic_cells = []
@@ -44,8 +44,9 @@ class HorizontalSimpleCell():
             response += cell.get_response(image)
         return response
 
+
 # диагональная простая клетка
-class DiagonalSimpleCell():
+class DiagonalSimpleCell:
     # инициализация простой диагональной клетки
     def __init__(self, position, size=7):
         self.ganglionic_cells = []

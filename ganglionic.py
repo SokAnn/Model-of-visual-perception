@@ -1,5 +1,6 @@
 import cv2
 
+
 # ганглиозная клетка
 class GanglionicCell():
     # инициализация клетки
@@ -9,7 +10,6 @@ class GanglionicCell():
         self.s2 = peripherial_radius
         self.size = (central_radius, peripherial_radius)
         self.isoff = isoff
-        #print('\t\t\t\t\t\t', self.pos, '\t ganglionic')
 
     # получение значения отклика на стимул
     def get_response(self, image):

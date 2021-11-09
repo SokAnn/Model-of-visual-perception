@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 
+
 # реакция клетки на световое пятно малого размера
 def check_point_stimulus(cell):
     responses = []
@@ -14,6 +15,7 @@ def check_point_stimulus(cell):
             cv2.circle(response_map, center=(i * 16 + 32, j * 16 + 32), radius=2, color=int(v), thickness=-1)
     return response_map
 
+
 # реакция клетки на стимул в форме светлого пятна на темном фоне
 def check_circle_stimulus(cell):
     responses = []
@@ -23,6 +25,7 @@ def check_circle_stimulus(cell):
         v = cell.get_response(image)
         responses.append(v)
     return responses
+
 
 # реакция клетки на стимул в виде линии, проходящей через центр рецептивного поля
 def rotate_line(cell):
@@ -40,6 +43,7 @@ def rotate_line(cell):
         angles.append(angle_grad)
     return responses, angles
 
+
 # реакция клетки на стимул в виде вертикальной линии, сдвигающейся вдоль оси абсцисс
 def vertical_line_shift(cell):
     responses = []
@@ -51,6 +55,7 @@ def vertical_line_shift(cell):
         v = cell.get_response(image)
         responses.append(v)
     return responses, shifts
+
 
 # реакция клетки на стимул в виде горизонтальной линии, сдвигающейся вдоль оси ординат
 def horizontal_line_shift(cell):
